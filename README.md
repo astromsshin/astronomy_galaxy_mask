@@ -1,13 +1,17 @@
+The codes presented in this repository are developed to 
+produce a mask that represent pixel dominated by signals 
+from galaxies above a certain threshould pixel level.
 
-./image_converter.py GLADE10001-g.fits ./output/g/GLADE10001-g.npy
-./image_converter.py GLADE10001-r.fits ./output/r/GLADE10001-r.npy
-./image_converter.py GLADE10001-i.fits ./output/i/GLADE10001-i.npy
-./image_converter.py GLADE10001-z.fits ./output/z/GLADE10001-z.npy
-./image_converter.py GLADE10001-y.fits ./output/y/GLADE10001-y.npy
+A newly proposed method to define the threshould level uses 
+the Gaussian Mixture Model (GMM) with the assumption that 
+thre most dominant mixture component corresponds to the distribution 
+of not source but background pixels.
 
+A final object mask is defined to be the union of masks-per-band (i.e., 
+the outcome of OR operation among the masks-per-band).
 
-./mask_generator.py GLADE10001-g.fits ./output/g GLADE10001-g
-./mask_generator.py GLADE10001-r.fits ./output/r GLADE10001-r
-./mask_generator.py GLADE10001-i.fits ./output/i GLADE10001-i
-./mask_generator.py GLADE10001-z.fits ./output/z GLADE10001-z
-./mask_generator.py GLADE10001-y.fits ./output/y GLADE10001-y
+The proposed method is implemented for the Pan-STARRS1 stack images 
+(https://outerspace.stsci.edu/display/PANSTARRS/PS1+Stack+images), and 
+it also assumes that a target galaxy is centered in given images.
+
+A relevant journal paper will be posted soon in the preprint server.
