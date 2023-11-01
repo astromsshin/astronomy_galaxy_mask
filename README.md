@@ -15,3 +15,6 @@ The proposed method is implemented for the Pan-STARRS1 stack images
 it also assumes that a target galaxy is centered in given images.
 
 A relevant journal paper will be posted soon in the preprint server.
+
+The script run_single_object.sh will help you figure out how the relevant 
+Python programs work together to produce the object mask.
